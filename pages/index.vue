@@ -22,8 +22,12 @@
     </div>
     <!----- End Search section ---->
 
+    <!------- Loading ------------>
+    <Loading v-if="$fetchState.pending" />
+    <!------- End Loading -------->
+
     <!--- Movies section---->
-    <div class="container movies">
+    <div v-else class="container movies">
       <!------ Searched Movies ----->
       <div v-if="searchInput !== ''" id="movie-grid" class="movies-grid">
         <div
@@ -56,7 +60,7 @@
             </p>
             <NuxtLink
               class="button button-light"
-              :to="{ name: 'movies-movieid', params: { movieid: movie.id } }"
+              :to="{ name: 'movies-id', params: { movieid: movie.id } }"
             >
               Get More Info
             </NuxtLink>
@@ -93,7 +97,7 @@
             </p>
             <NuxtLink
               class="button button-light"
-              :to="{ name: 'movies-movieid', params: { movieid: movie.id } }"
+              :to="{ name: 'movies-id', params: { id: movie.id } }"
             >
               Get More Info
             </NuxtLink>
@@ -110,6 +114,7 @@
 import axios from 'axios'
 export default {
   name: 'IndexPage',
+
   data() {
     return {
       movies: [],
@@ -117,11 +122,15 @@ export default {
       searchInput: '',
     }
   },
+
   async fetch() {
     this.searchInput === ''
       ? await this.getMovies()
       : await this.getSearchedMovies()
   },
+
+  fetchDelay: 1000,
+
   methods: {
     async getMovies() {
       const data = axios.get(
@@ -132,6 +141,7 @@ export default {
         this.movies.push(movie)
       })
       console.log(this.movies)
+      console.log('Holi')
     },
     async getSearchedMovies() {
       const data = axios.get(
