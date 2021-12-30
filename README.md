@@ -7,7 +7,7 @@ This time I used heroku to practice.
 
 You can see the project link by _[CLICKING HERE](https://learning-with-movie-app.herokuapp.com/)_
 
-## Build Setup
+## Build Setup 🛠
 
 ```bash
 # install dependencies
@@ -26,7 +26,7 @@ $ npm run generate
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
 
-## Special Directories
+## Special Directories 👩‍💻
 
 You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
 
