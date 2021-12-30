@@ -1,5 +1,12 @@
 # movie-app
 
+## Deploy 🚀
+
+
+This time I used heroku to practice.
+
+You can see the project link by _[CLICKING HERE](https://learning-with-movie-app.herokuapp.com/)_
+
 ## Build Setup
 
 ```bash
