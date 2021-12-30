@@ -10,7 +10,7 @@
         @keyup.enter="$fetch"
         type="text"
         placeholder="Search"
-        v-model.lazy="searchInput"
+        v-model="searchInput"
       />
       <button
         v-on:click="clearSearch()"
